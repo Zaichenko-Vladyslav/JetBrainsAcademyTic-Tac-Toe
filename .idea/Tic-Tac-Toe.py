@@ -13,17 +13,16 @@ def get_coordinates():
     while True:
         coordinates = input('Enter the coordinates: ')
         if not coordinates[0].isdigit() or not coordinates[2].isdigit():  # check digit input
-            print('You should enter numbers!')
+            print('You should enter 2 numbers with space between!')
             continue
         x, y = int(coordinates[0]), int(coordinates[2])
-        if not (1 <= x <= 3) or not (1 <= y <= 3):  # check x, y are from 1 to 3
+        if not (1 <= x <= 3) or not (1 <= y <= 3):  # check if x, y are from 1 to 3
             print('Coordinates should be from 1 to 3!')
             continue
-        if grid[x - 1][y - 1] != ' ':  # check is this cell occupied
+        if grid[x - 1][y - 1] != ' ':  # check if this cell is occupied
             print('This cell is occupied! Choose another one!')
             continue
         return x - 1, y - 1
-
 
 def winner(symbol):
     # horizontal win check
